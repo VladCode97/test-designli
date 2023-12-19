@@ -1,73 +1,59 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# The following is a description of the project
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+The project is built with Nestjs using npm as package manager for the solution.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Within this project there is a mvc architecture by domain, where each domain corresponds to each problem that was raised.
 
-## Description
+For example, for the mailParser, it contains this structure
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
+```
+├── domain
+│   └── enums
+│       └── errors.enum.ts
+├── mail-parser.module.ts
+├── service
+│   └── MailParser.service.ts
+└── view
+    └── MailParser.controller.ts
 ```
 
-## Running the app
+Mapper structure:
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+```
+├── domain
+│   ├── model
+│   │   ├── ActionModel.ts
+│   │   ├── CommonHeadersModel.ts
+│   │   ├── MailModel.ts
+│   │   ├── ReceiptModel.ts
+│   │   ├── RecordModel.ts
+│   │   └── VerdictModel.ts
+│   └── types
+│       └── SESType.ts
+├── mapper-structure.module.ts
+├── service
+│   └── MapperStructure.service.ts
+├── shared
+│   └── DTO
+│       └── sesRecordDTO.ts
+├── utils
+│   ├── mapperJsonInformation.util.ts
+│   └── transformerInformation.util.ts
+└── view
+    └── MapperStructure.controller.ts
 ```
 
-## Test
+In addition to this, this project contains a swagger indicating the tests that were needed to fix it.
 
-```bash
-# unit tests
-$ npm run test
+http://url(local or production)/
 
-# e2e tests
-$ npm run test:e2e
+Notes
+* It has the latest version of nestJS.
+* It also has the latest version of Nodejs ( v21.4.0 )
 
-# test coverage
-$ npm run test:cov
-```
+## Installation guide
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+1. Have the latest version of npm ( 10.2.4 ).
+2. Download the project repository.
+3. enter the project and give the command npm run install.
+4. then give the command npm run start.
