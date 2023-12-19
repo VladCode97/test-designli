@@ -105,3 +105,13 @@ export const SES_RECORD_DTO_EXAMPLE = [
     eventSource: 'aws:ses',
   },
 ];
+
+export const SES_RECORD_OUTPUT_TEST = {
+  "spam": "spamVerdic a boolean, PASS = true",
+  "virus": "virusVerdic a boolean, PASS = true",
+  "dns": "spfVerdic, dkimVeredict, dmarcVeredict a boolean, si todos PASS = true",
+  "mes": "mail.timestamp a mes como texto: September",
+  "retrasado": "processingTimeMillis a boolean, > 1000 = false",
+  "emisor": "mail.source a usuario de correo sin @dominio.com: 61967230-7A45-4A9D-BEC9-87CBCF2211C9@example.com",
+  "receptor": ["mail.destination a usuarios de correo sin @dominio.com: recipient@example.com"]
+}

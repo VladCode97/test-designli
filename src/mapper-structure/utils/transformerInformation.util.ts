@@ -54,7 +54,7 @@ export function transformerInformationSESRecord(
     }`;
     transformedData.receptor = mail.destination.map(
       (recipient) =>
-        `mail.source a usuario de correo sin @dominio.com: ${
+        `mail.destination a usuarios de correo sin @dominio.com: ${
           domainRegex.test(recipient) ? '' : recipient
         }`,
     );
