@@ -7,6 +7,6 @@ export class MailParserController {
 
   @Get()
   recieveMail(@Query('emailPath') emailPath: string): Promise<any> {
-    return this.mailParserService.findJson(emailPath);
+    return this.mailParserService.findJsonInMail(emailPath);
   }
 }

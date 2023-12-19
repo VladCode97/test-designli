@@ -6,7 +6,9 @@ import { MailParserErrorEnum } from '../domain/enums/errors.enum';
 
 @Injectable()
 export class MailParserService {
-  async findJson(emailFilePath: string): Promise<any> {
+
+
+  async findJsonInMail(emailFilePath: string): Promise<any> {
     try {
       const emailContent = await readFile(emailFilePath, 'utf8');
       const parsedEmail = await simpleParser(emailContent);
@@ -20,8 +22,8 @@ export class MailParserService {
       } else {
         return MailParserErrorEnum.NOT_FOUND_FILE;
       }
-    } catch (exception) {
-      throw new Error(exception.message);
+    } catch (_) {
+      throw new Error(MailParserErrorEnum.NOT_FOUND_FILE);
     }
   }
 
